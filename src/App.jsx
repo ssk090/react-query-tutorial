@@ -5,6 +5,7 @@ import HomePage from "./components/Home.page";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import RQSuperhero from "./components/RQSuperhero";
+import ParallelQueries from "./components/ParallelQueries.page";
 
 function App() {
   const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ function App() {
             </ul>
           </nav>
           <Routes>
+            <Route path="/parallel-queries" Component={ParallelQueries} />
             <Route path="/rq-super-heroes/:heroId" Component={RQSuperhero} />
             <Route path="/super-heroes" Component={SuperheroesPage} />
             <Route path="/rq-super-heroes" Component={RQSuperheroesPage} />
