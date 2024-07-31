@@ -1,4 +1,5 @@
 import { useSuperHeroesData } from "../hooks/useSuperHeroesData";
+import { Link } from "react-router-dom";
 
 export default function RQSuperheroesPage() {
   const { data, isLoading, isError, error, refetch } = useSuperHeroesData();
@@ -15,8 +16,9 @@ export default function RQSuperheroesPage() {
       {data?.data.map((superhero) => {
         return (
           <div key={superhero.id}>
-            <h2>{superhero.name}</h2>
-            <p>{superhero.alterEgo}</p>
+            <Link to={`/rq-super-heroes/${superhero.id}`}>
+              {superhero.name}
+            </Link>
           </div>
         );
       })}
