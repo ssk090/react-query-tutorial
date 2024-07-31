@@ -1,4 +1,3 @@
-import React from "react";
 import { useQueries } from "@tanstack/react-query";
 import axios from "axios";
 

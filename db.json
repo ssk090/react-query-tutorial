@@ -29,5 +29,17 @@
       "id": 3,
       "name": "Joey Tribbiani"
     }
+  ],
+  "users": [
+    {
+      "id": "shivanandasai.38@gmail.com",
+      "channelId": "ssk090"
+    }
+  ],
+  "channels": [
+    {
+      "id": "ssk090",
+      "courses": ["react", "vue", "angular"]
+    }
   ]
 }
