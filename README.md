@@ -4,6 +4,7 @@ Video: https://www.youtube.com/watch?v=2TX8ojaSwF0&list=PLC3y8-rFHvwjTELCrPrcZlo
 ## Reference
 - https://github.com/gopinav/React-Query-Tutorials
 - https://tkdodo.eu/blog/practical-react-query
+- https://tanstack.com/query/latest/docs/framework/react/overview
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
