@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 
 // method 1
@@ -8,9 +8,18 @@ const fetchSuperHero = ({ queryKey }) => {
 };
 
 export const useSuperHeroData = (heroId) => {
+  const queryClient = useQueryClient();
   return useQuery({
     queryKey: ["super-hero", heroId],
     queryFn: fetchSuperHero,
+    initialData: () => {
+      const hero = queryClient
+        .getQueryData("super-hero")
+        ?.data?.find((hero) => hero.id === parseInt(heroId));
+
+      if (hero) return { data: hero };
+      return undefined;
+    },
   });
 };
 
