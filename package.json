@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "json-server": "json-server --watch db.json --port 4000"
+    "json-server": "json-server --watch db.json --port 4000",
+    "start": "yarn run json-server & yarn run dev"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.51.15",

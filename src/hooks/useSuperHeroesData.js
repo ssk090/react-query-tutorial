@@ -1,8 +1,12 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 
 const fetchSuperheroes = () => {
   return axios.get("http://localhost:4000/superheroes");
+};
+
+const addSuperHero = (hero) => {
+  return axios.post("http://localhost:4000/superheroes", hero);
 };
 
 export const useSuperHeroesData = () => {
@@ -19,5 +23,15 @@ export const useSuperHeroesData = () => {
     // select: (data) =>
     //   data.data.map((superhero) => superhero.name.toUpperCase()), // This means that the data will be transformed before it is returned
     // // Follow this docs for better code practices: https://tkdodo.eu/blog/react-query-data-transformations#3-using-the-select-option
+  });
+};
+
+export const useAddSuperHero = () => {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: addSuperHero,
+    onSuccess: () => {
+      queryClient.invalidateQueries("super-heroes");
+    },
   });
 };
