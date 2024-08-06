@@ -1,12 +1,17 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import axios from "axios";
+// import axios from "axios";
+import { request } from "../utils/axios-utils";
 
 const fetchSuperheroes = () => {
-  return axios.get("http://localhost:4000/superheroes");
+  // return axios.get("http://localhost:4000/superheroes");
+  return request({ options: { url: "/superheroes", method: "GET" } });
 };
 
 const addSuperHero = (hero) => {
-  return axios.post("http://localhost:4000/superheroes", hero);
+  // return axios.post("http://localhost:4000/superheroes", hero);
+  return request({
+    options: { url: "/superheroes", method: "POST", data: hero },
+  });
 };
 
 export const useSuperHeroesData = () => {

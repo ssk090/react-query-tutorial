@@ -34,6 +34,11 @@
       "name": "shiv2",
       "alterEgo": "tets2",
       "id": 7
+    },
+    {
+      "name": "axios",
+      "alterEgo": "interceptor",
+      "id": 8
     }
   ],
   "friends": [
