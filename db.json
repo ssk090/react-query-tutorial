@@ -29,6 +29,11 @@
       "name": "shiv",
       "alterEgo": "hero",
       "id": 6
+    },
+    {
+      "name": "shiv2",
+      "alterEgo": "tets2",
+      "id": 7
     }
   ],
   "friends": [
